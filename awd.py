@@ -49,7 +49,7 @@ clf.fit(X=x, y=y)
 print(clf.best_score_, clf.best_params_)
 tree_model = clf.best_estimator_
 dot_data = StringIO()
-export_graphviz(tree_model, out_file=dot_data, filled=True, rounded=True, special_characters=True, feature_names=feature_cols)
+export_graphviz(tree_model, out_file=dot_data, filled=True, rounded=True, special_characters=True, feature_names=feature_cols, class_names=cpuNames["NAME"])
 graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
 graph.write_png('cpu.png')
 Image(graph.create_png())
